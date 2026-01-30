@@ -23,7 +23,10 @@ fn main() {
         let guess: u32 = guess.trim().parse().expect("Failed to parse!");
 
         match guess.cmp(&secret_number) {
-            Ordering::Equal => println!("You win!"),
+            Ordering::Equal => {
+                println!("You win!");
+                break;
+            },
             Ordering::Less => println!("Too small!"),
             Ordering::Greater => println!("Too big!"),
         }
